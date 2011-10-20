@@ -3,6 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 class MainPanel extends JPanel
+
 implements ActionListener 
 {
     
@@ -11,8 +12,10 @@ implements ActionListener
     JButton hoodButton;
     
     
+    
     JTextArea textArea;
     JScrollPane scrollPane;
+    
     
     
     public MainPanel() {
@@ -85,6 +88,8 @@ implements ActionListener
     	return "\nHood College \nComputer Science Department\n";
         
     }
+    
+    
     
 } 
 
