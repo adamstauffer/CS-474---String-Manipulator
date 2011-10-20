@@ -6,6 +6,7 @@ class MainPanel extends JPanel
     implements ActionListener {
 
     JButton adamButton;
+    JButton kateButton;
 
     JTextArea textArea;
     JScrollPane scrollPane;
@@ -17,12 +18,22 @@ class MainPanel extends JPanel
     textArea.setText("Enter some text here!");
     scrollPane = new JScrollPane();
     scrollPane.setViewportView(textArea);
+
     adamButton = new JButton("Adam's Button");
   
     add(scrollPane);
     add(adamButton); 
 
+    adamButton = new JButton("Adam's Button");  
+	kateButton = new JButton("Kate's Button");
+  
+    add(scrollPane);
+    add(adamButton);
+    add(kateButton);
+
+
     adamButton.addActionListener(this);
+    kateButton.addActionListener(this);
     
   }
 
@@ -37,9 +48,11 @@ class MainPanel extends JPanel
     adamMethod(textArea.getText());
 
     }
-    
-
-  }
+    if (source == kateButton)
+    {
+    textArea.setText(kateMethod(textArea.getText()));
+    }
+    }
 
   public void adamMethod(String val)
   {
@@ -50,6 +63,12 @@ class MainPanel extends JPanel
          JOptionPane.showMessageDialog(null,ary[i]);
     }
 
+  }
+
+  public String kateMethod(String val)
+  {
+	return val.toUpperCase();
+	
   }
 
 
