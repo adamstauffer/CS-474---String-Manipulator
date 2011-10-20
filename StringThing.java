@@ -1,28 +1,35 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.net.*;
+import java.io.*;
 
 class MainPanel extends JPanel
     implements ActionListener {
 
     JButton adamButton;
+    JButton hoodButton;
 
     JTextArea textArea;
+
     JScrollPane scrollPane;
     
 
   public MainPanel() {
 
-    textArea = new JTextArea(5, 20);
+    textArea = new JTextArea(20, 25);
     scrollPane = new JScrollPane();
     scrollPane.setViewportView(textArea);
     adamButton = new JButton("Adam's Button");  
+    hoodButton = new JButton("Hood College"); 
   
     add(scrollPane);
-    add(adamButton);     
+    add(adamButton);
+    add(hoodButton);     
 
     adamButton.addActionListener(this);
-    
+    hoodButton.addActionListener(this);
+
   }
 
   // ActionPerformed method from ActionListener interface
@@ -36,9 +43,26 @@ class MainPanel extends JPanel
     textArea.setText(adamMethod(textArea.getText()));
 
     }
+    else if(source == hoodButton)
+    {
+        textArea.setText(nMethod(textArea.getText()));
+
+    }
     
 
   }
+  public String nMethod(String val)
+  {
+
+try {
+    URL myURL = new URL("http://cs.hood.edu");
+
+} catch (MalformedURLException e) {
+   }
+
+      return (val + "\nHood College\nComputer Science Department\n");
+
+  }  
 
   public String adamMethod(String val)
   {
@@ -48,11 +72,10 @@ class MainPanel extends JPanel
 
 
 } 
-
     class StringThing extends JFrame {
       public StringThing() {
             setTitle("Collaborative String Manipulator");
-            setSize(350, 300);
+            setSize(350, 500);
             addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
               System.exit(0);
