@@ -14,12 +14,13 @@ class MainPanel extends JPanel
   public MainPanel() {
 
     textArea = new JTextArea(5, 20);
+    textArea.setText("Enter some text here!");
     scrollPane = new JScrollPane();
     scrollPane.setViewportView(textArea);
-    adamButton = new JButton("Adam's Button");  
+    adamButton = new JButton("Adam's Button");
   
     add(scrollPane);
-    add(adamButton);     
+    add(adamButton); 
 
     adamButton.addActionListener(this);
     
@@ -33,16 +34,21 @@ class MainPanel extends JPanel
 
     if (source == adamButton)
     {
-    textArea.setText(adamMethod(textArea.getText()));
+    adamMethod(textArea.getText());
 
     }
     
 
   }
 
-  public String adamMethod(String val)
+  public void adamMethod(String val)
   {
-    return (val + " yo yo dog its yo boy adam");
+    String[] ary;
+    ary = val.split(" ");
+    for (int i=0; i < ary.length; i++)
+    {
+         JOptionPane.showMessageDialog(null,ary[i]);
+    }
 
   }
 
