@@ -21,8 +21,7 @@ class MainPanel extends JPanel
 
     adamButton = new JButton("Adam's Button");
   
-    add(scrollPane);
-    add(adamButton); 
+    add(scrollPane); 
 
     adamButton = new JButton("Adam's Button");  
 	kateButton = new JButton("Kate's Button");
